@@ -1,0 +1,35 @@
+#diff-tools li, #diff-tools ul {
+	display: inline-table;
+	margin: 0;
+	padding: 0;
+}
+
+#diff-tools > ul > li:before {
+	content: "(";
+}
+
+#diff-tools > ul > li:after {
+	content :") ";
+}
+
+#diff-tools > ul > li > ul > li:not(:first-child):before {
+	content: " / ";
+}
+
+#diff-tools > ul > li > ul > li > ul > li:not(:first-child)::before {
+	content: " . ";
+}
+
+#df-dialog-commentary {
+	width: 300px;
+	height: 100px;
+}
+
+#df-dialog-remainingChar {
+	float: right;
+	font-size: smaller;
+}
+
+.df-fillField {
+	border: 1px solid red;
+}
