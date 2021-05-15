@@ -11,7 +11,7 @@
  * @author [[w:pt:User:!Silent]]
  */
 /* jshint laxbreak: true */
-/* global mediaWiki */
+/* global mw */
 
 ( function () {
 'use strict';
