@@ -27,7 +27,6 @@ mw.messages.set( {
 	// Edit
 	'df-edit-preparing': 'Preparando a edição da página "$1"...',
 	'df-edit-summaryPrefix': 'Desfeita(s) uma ou mais edições de [[Special:Contribs/$1|$1]]',
-	'df-edit-summarySufix': ' com [[WP:RA|Reversão e avisos]]',
 	'df-edit-success': '<p>A página "$1" <a href="$2">foi editada</a> (<a href="$3">abrir</a>).</p>',
 
 	// Errors
