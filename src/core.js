@@ -5,7 +5,7 @@
  * @source [[:en:Wikipedia:WikiProject_User_scripts/Scripts/Revert_tools]]
  * @see [[WP:Scripts/Reversão e avisos]]
  * @see [[MediaWiki:Gadget-diffTools.js/buttonsList.js]]
- * @update 02/mai/2021
+ * @update 04/sep/2021
  * @author [[w:en:User:Lorian]]
  * @author Helder (https://github.com/he7d3r)
  * @author [[w:pt:User:!Silent]]
@@ -95,7 +95,7 @@ DiffTools.prototype.revert = function ( page, oldid, summary ) {
 DiffTools.prototype.revertWithComment = function () {
 	var $commentary,
 		buttons = {},
-		initialRemaining = 800 - df.message( 'df-edit-summaryPrefix', df.revertUser ).length - df.message( 'df-edit-summarySufix' ).length - 7,
+		initialRemaining = 492 - df.message( 'df-edit-summaryPrefix', df.revertUser ).length,
 		remainingControl = function( e ) {
 			if ( $.inArray( e.code, [ 'Backspace', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Home', 'End', 'Delete', 'NumpadDecimal' ] ) === -1
 				&& !e.ctrlKey
@@ -163,7 +163,8 @@ DiffTools.prototype.editPage = function ( page, text, summary, section ) {
 		watchlist: 'nochange',
 		title: page,
 		text: text,
-		summary: summary + df.message( 'df-edit-summarySufix' ),
+		summary: summary,
+		tags: 'diff-tools',
 		token: mw.user.tokens.get( 'csrfToken' ),
 		done: {
 			success: function ( data ) {
