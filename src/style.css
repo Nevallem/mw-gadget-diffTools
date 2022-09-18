@@ -1,3 +1,9 @@
+#diff-tools {
+	font-size: 12px;
+	line-height: 1.2em;
+	color: #54595d;
+}
+
 #diff-tools li, #diff-tools ul {
 	display: inline-table;
 	margin: 0;
