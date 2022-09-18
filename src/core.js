@@ -5,7 +5,7 @@
  * @source [[:en:Wikipedia:WikiProject_User_scripts/Scripts/Revert_tools]]
  * @see [[WP:Scripts/Reversão e avisos]]
  * @see [[MediaWiki:Gadget-diffTools.js/buttonsList.js]]
- * @update 04/sep/2021
+ * @update 20/aug/2022
  * @author [[w:en:User:Lorian]]
  * @author Helder (https://github.com/he7d3r)
  * @author [[w:pt:User:!Silent]]
@@ -28,7 +28,7 @@ function DiffTools() {
 
 	/**
 	 * Name of current page
-	 * @property {string } pageName
+	 * @property {string} pageName
 	 */
 	this.pageName = mw.config.get( 'wgPageName' ).replace( /_/g, ' ' );
 
@@ -120,7 +120,7 @@ DiffTools.prototype.revertWithComment = function () {
 		df.revert(
 			df.pageName,
 			mw.util.getParamValue( 'oldid', $( '#mw-diff-otitle1' ).find( 'a' ).first().attr( 'href' ) ),
-			df.message( 'df-edit-summaryPrefix', df.revertUser ) + ' (' + $commentary.val() + '),'
+			df.message( 'df-edit-summaryPrefix', df.revertUser ) + ' (' + $commentary.val() + ')'
 		);
 
 		$( this ).dialog( 'close' );
@@ -134,7 +134,7 @@ DiffTools.prototype.revertWithComment = function () {
 		content:
 			'<label>'
 				+ df.message( 'df-dialog-commentary' ) + '<br />'
-				+ '<textarea id="df-dialog-commentary" />'
+				+ '<textarea id="df-dialog-commentary"></textarea>'
 			+ '</label>'
 			+ '<div id="df-dialog-remainingChar">' + df.message( 'df-dialog-remainingChar', initialRemaining ) + '</div>',
 		buttons: buttons
@@ -320,9 +320,15 @@ df.run = function () {
 		$ulSections.append( $liSection );
 	} );
 
-	$( '#contentSub' ).prepend(
-		$( '<span id="diff-tools"></span>' ).append( $ulSections )
-	);
+	if ( mw.config.get( 'skin' ) === 'vector-2022') {
+		$( '#mw-content-text' ).before(
+			$( '<span id="diff-tools"></span>' ).append( $ulSections )
+		);
+	} else {
+		$( '#contentSub' ).prepend(
+			$( '<span id="diff-tools"></span>' ).append( $ulSections )
+		);
+	}
 };
 
 window.diffTools = new DiffTools();
