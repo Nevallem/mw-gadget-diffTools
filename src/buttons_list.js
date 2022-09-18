@@ -46,7 +46,7 @@ $.extend( df.buttons, {
 			'Reverter': {
 				'desc': 'Desfaz as últimas edições do artigo, para retornar à'
 					+ ' versão mostrada à esquerda',
-				'sum': 'Desfeita(s) uma ou mais edições de [[Special:Contribs/$2|$2]],'
+				'sum': 'Desfeita(s) uma ou mais edições de [[Special:Contribs/$2|$2]]'
 			},
 
 			'+comentário': {
@@ -89,12 +89,6 @@ $.extend( df.buttons, {
 				'sum': 'Aviso sobre mudanças entre [' + '[WP:VLP]]'
 			},
 
-			'fontes removidas': {
-				'desc': 'Envia um aviso sobre remoção de fontes ao usuário',
-				'subst': 'Av-fonte|' + pageName,
-				'sum': 'Aviso sobre remoção de fontes'
-			},
-
 			'previsão': {
 				'desc': 'Envia um aviso sobre botão de previsão ao usuário',
 				'subst': 'Mostrar previsão|' + pageName,
@@ -124,13 +118,7 @@ $.extend( df.buttons, {
 				'subst': 'Aviso-conflito de interesses|' + pageName,
 				'sum': 'Aviso sobre conflitos de interesses'
 			},
-
-			'bloq': {
- 				'desc': 'Envia a notificação de bloqueio de 1 dia pelo vandalismo ao usuário',
- 				'subst': 'Vandalismo|b|' + pageName + '|tempo=1 dia',
- 				'sum': 'Notificação de bloqueio de 1 dia pelo vandalismo'
-			},
-
+			
 			'VDA': {
 				'desc': 'Envia um aviso sobre violação de direitos de autor ao usuário',
 				'subst': 'Aviso-cópia|' + pageName,
@@ -141,33 +129,14 @@ $.extend( df.buttons, {
 				'desc': 'Envia um aviso sobre suspeita de violação de direitos de autor ao usuário',
 				'subst': 'Aviso-suspeito|' + pageName + '|15 minutos',
 				'sum': 'Aviso sobre suspeita de violação de direitos de autor'
+			},
+			
+			'parcial': {
+				'desc': 'Envia um aviso sobre parcialidade ao usuário',
+				'subst': 'Aviso-pdi|' + pageName,
+				'sum': 'Aviso sobre parcialidade'
 			}
 		},
-	},
-
-	'Avisos de remoção de marcação de eliminação': {
-		'description': 'Av-nr: ',
-
-		'avisos': {
-
-			'er': {
-				'desc': 'Envia um aviso sobre remoção da marcação de eliminação rápida ao usuário',
-				'subst': 'Aviso-não remova|' + pageName + '|er',
-				'sum': 'Aviso sobre remoção da marcação de eliminação rápida'
-			},
-
-			'esr': {
-				'desc': 'Envia um aviso sobre remoção da marcação de eliminação semirrápida ao usuário',
-				'subst': 'Aviso-não remova|' + pageName + '|esr',
-				'sum': 'Aviso sobre remoção da marcação de eliminação semirrápida'
-			},
-
-			'ec': {
-				'desc': 'Envia um aviso sobre remoção da marcação de eliminação por consenso ao usuário',
-				'subst': 'Aviso-não remova|' + pageName + '|ec',
-				'sum': 'Aviso sobre remoção da marcação de eliminação por consenso'
-			}
-		}
 	},
 
 	'Genéricos': {
@@ -286,6 +255,12 @@ $.extend( df.buttons, {
 				'desc': 'Envia o terceiro aviso sobre divulgação publicitária',
 				'subst': 'Av-pub|3|' + pageName,
 				'sum': 'Terceiro aviso sobre divulgação publicitária'
+			},
+			
+			'blogue': {
+ 				'desc': 'Envia um aviso sobre não ser um blogue ou uma plataforma de divulgação',
+				'subst': 'Aviso-blogue|' + pageName,
+				'sum': 'Aviso sobre não ser um blogue'
 			}
 		}
 	},
@@ -340,6 +315,30 @@ $.extend( df.buttons, {
 				'desc': 'Envia o segundo aviso sobre não citar as fontes ao usuário.',
 				'subst': 'Aviso-cite fonte|' + pageName + '|2',
 				'sum': 'Segundo aviso sobre falta de fontes'
+			},
+			
+			'3': {
+				'desc': 'Envia o terceiro aviso sobre não citar as fontes ao usuário.',
+				'subst': 'Aviso-cite fonte|' + pageName + '|3',
+				'sum': 'Terceiro aviso sobre falta de fontes'
+			}
+		}
+	},
+	
+	'FNC': {
+		'description': 'Fontes não confiáveis: ',
+
+		'avisos': {
+			'genérico': {
+				'desc': 'Envia um aviso sobre o uso de fontes não confiáveis ao usuário',
+				'subst': 'Aviso-fontes não confiáveis|' + pageName,
+				'sum': 'Aviso sobre uso de fontes não confiáveis'
+			},
+			
+			'IMDb': {
+				'desc': 'Envia um aviso sobre o uso do IMDb como fonte ao usuário',
+				'subst': 'Aviso-IMDb|' + pageName,
+				'sum': 'Aviso sobre uso do IMDb como fonte'
 			}
 		}
 	},
@@ -370,7 +369,13 @@ $.extend( df.buttons, {
 				'desc': 'Envia o terceiro aviso sobre remoção de conteúdos ao usuário',
 				'subst': 'Av-Remoção|3|' + pageName,
 				'sum': 'Terceiro aviso sobre remoção de conteúdos'
-			}
+			},
+			
+			'fontes removidas': {
+				'desc': 'Envia um aviso sobre remoção de fontes ao usuário',
+				'subst': 'Av-fonte|' + pageName,
+				'sum': 'Aviso sobre remoção de fontes'
+			},
 		}
 	},
 
@@ -400,6 +405,30 @@ $.extend( df.buttons, {
 				'desc': 'Envia o terceiro aviso sobre remoção de predefinições de manutenção',
 				'subst': 'Aviso-tag|3|' + pageName,
 				'sum': 'Terceiro aviso sobre remoção de predefinições de manutenção'
+			}, 
+			
+			'er': {
+				'desc': 'Envia um aviso sobre remoção da marcação de eliminação rápida ao usuário',
+				'subst': 'Aviso-não remova|' + pageName + '|er',
+				'sum': 'Aviso sobre remoção da marcação de eliminação rápida'
+			},
+
+			'esr': {
+				'desc': 'Envia um aviso sobre remoção da marcação de eliminação semirrápida ao usuário',
+				'subst': 'Aviso-não remova|' + pageName + '|esr',
+				'sum': 'Aviso sobre remoção da marcação de eliminação semirrápida'
+			},
+
+			'caa': {
+				'desc': 'Envia um aviso sobre remoção da marcação de candidatura a artigo ao usuário',
+				'subst': 'Aviso-não remova|' + pageName + '|caa',
+				'sum': 'Aviso sobre remoção da marcação de candidatura a artigo'
+			},
+
+			'ec': {
+				'desc': 'Envia um aviso sobre remoção da marcação de eliminação por consenso ao usuário',
+				'subst': 'Aviso-não remova|' + pageName + '|ec',
+				'sum': 'Aviso sobre remoção da marcação de eliminação por consenso'
 			}
 		}
 	},
@@ -420,7 +449,25 @@ $.extend( df.buttons, {
 				'sum': 'Mensagem sobre remoção de avisos da PDU'
 			}
 		}
-	}
+	},
+	
+	'Faltou adicionar': {
+		'description': 'Faltou adicionar: ',
+
+		'avisos': {
+			'categoria': {
+				'desc': 'Envia um aviso sobre artigo não categorizado ao usuário',
+				'subst': 'Aviso-categoria|' + pageName,
+				'sum': 'Aviso sobre artigo não categorizado'
+			},
+
+			'interwiki': {
+				'desc': 'Envia um aviso sobre artigo sem hiperligações para outros idiomas ao usuário',
+				'subst': 'Aviso-interwiki|' + pageName,
+				'sum': 'Aviso sobre artigo sem hiperligações para outros idiomas'
+			}
+		}
+	}	
 } );
 
 }( diffTools ) );
